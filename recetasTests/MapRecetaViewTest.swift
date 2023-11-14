@@ -33,6 +33,11 @@ class MapRecetaViewTest: XCTestCase {
     func testLoadView() throws {
         _ = try XCTUnwrap(sut.mapView, "Se debe crear el IBOutlet para el componente mapView(GMSMapView)")
     }
+    
+    func testRecetaData_EstaVacia() throws {
+        XCTAssertEqual(sut.receta != nil, true, "Debe llegar una clase Recetas()")
+        XCTAssertEqual(sut.receta?.coordenadas_origen != nil, true, "Debe llegar una clase coordenadas_origen() para poder colocar el marker")
+    }
 
 
 }
